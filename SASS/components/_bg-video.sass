@@ -1,0 +1,18 @@
+// стили для видеофона
+.bg-video
+    position: absolute //наш видефон привязан позиционированием к родителю - section-feedback
+    top: 0
+    left: 0
+    width: 100% //чтобы видео занимала всю ширину контейнера
+    height: 100% //чтобы видео занимала всю высоту контейнера
+    z-index: -2 //Наш видео фон под основным контейнером, чтобы было видно кнопки
+    object-fit: cover //Свойство немного увеличивает видео, но при этом сохраняет пропорции по контйнеру
+
+.bg-gradient
+    position: absolute //наш гражиент так же привязан позиционированием к родителю - section-feedback
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(90deg, rgba($color-brown-light, 0.7), rgba($color-black, 0.7))
+    z-index: -1 //Градиент над видео фоном
