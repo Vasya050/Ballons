@@ -10,3 +10,34 @@
         content: ""
         display: table
         clear: both
+
+// Адаптация сайта
+// Чтобы медиа-запросы сработали, max-width нужно указывать сверху вниз
+@mixin phone
+    @media (max-width: 600px)
+        @content
+        
+/*В аргусенте миксина мы будем использовать несколько вариантов брейкпоинтов, таких как:
+    - phone
+    - tab-port
+    - tab-land
+    - big-screen
+        (эти слова просто придуманные)
+    */
+
+@mixin respond($breakpoit) //Название миксина respond. Наш аргумент $breakpoint
+    @if $breakpoit == phone //Если phone == тот аргумент, который мы установили, тогда срабатывает код
+        @media only screen and (max-width: 600px)
+            @content
+
+    @if $breakpoit == tab-port
+        @media only screen and (max-width: 900px)
+            @content
+
+    @if $breakpoit == tab-land
+        @media only screen and (max-width: 1240px)
+            @content
+
+    @if $breakpoit == big-screen //если сайт будет больше 1200, но меньше 1800, он будет отображаться без каких-либо media
+        @media only screen and (min-width: 1800px)
+            @content

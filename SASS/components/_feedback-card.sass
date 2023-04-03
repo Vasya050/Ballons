@@ -6,8 +6,14 @@
     margin: 0 auto
     padding: 6rem
     transform: skewX(330deg) //своиство для наклона карточки
+    @include respond(tab-port)
+        transform: skewX(350deg)
+        padding: 3rem
     & > * //обращения ко всем дочерним элементам
         transform: skewX(-330deg) //своиство, которое отменяет налон у всего кроме карточки 
+        @include respond(tab-port)
+            transform: skewX(-350deg)
+            text-align: center
     &__img //стили для изображения
         width: 15rem
         height: 15rem
@@ -19,10 +25,15 @@
         margin-right: 4rem
         overflow: hidden
         position: relative
+        @include respond(tab-port)
+            float: none
+            margin: 0 auto
+            margin-bottom: 3rem
         img
             height: 100%
             transform: scale(1.2) 
             transition: all .5s
+            
     &__name // стили Фамилии и имени изображения
         font-size: 2rem
         color: $color-white

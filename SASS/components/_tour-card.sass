@@ -4,6 +4,9 @@
     perspective: 150rem //свойство чтобы предать карточки эффект 3d вращения
     -maz-perspective: 150rem
     position: relative
+    @media only screen and (max-width: 900px), (hover: none)
+        height: auto
+
     &__side //стили для каждой стороны карточки
         height: 50rem
         transition: all .7s ease-out
@@ -16,15 +19,30 @@
         box-shadow: $box-shadow
         border-radius: .5rem
         overflow: hidden
+        @media only screen and (max-width: 900px), (hover: none)
+            height: auto
+            position: relative
+
         &_front //стили для передней стороны карточки
+            @media only screen and (max-width: 900px), (hover: none)
+                padding-bottom: 13rem
 
         &_back //стили для задней стороны карточки
             background: green
             transform: rotateY(180deg)
             background: linear-gradient(120deg, $color-brown-light, $color-brown-dark)
+            @media only screen and (max-width: 900px), (hover: none)
+                transform: rotateY(0deg)
+                padding: 5rem
+                padding-top: 12rem
+                margin-top: -11rem
+                clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
+
     // поворот карточки при наведении
     &:hover &__side_front
         transform: rotateY(-180deg)
+        @include respond(tab-port)
+            transform: rotateY(0deg)
     &:hover &__side_back
         transform: rotateY(0deg)
 
@@ -39,6 +57,9 @@
             background: $color-brown-light url(../img/card-2.jpg) center / cover no-repeat
         &_3
             background: $color-brown-light url(../img/card-3.jpg) center / cover no-repeat
+        @media only screen and (max-width: 900px), (hover: none)
+            height: 30rem
+
 
     &__title //стили для заголовка
         font-size: 2.8rem
@@ -49,6 +70,10 @@
         position: absolute
         top: 17rem
         right: 0
+        @include respond(tab-port)
+            top: 25rem
+            font-size: 3.8rem
+
     &__span //стили для span заголовков
         background: linear-gradient(90deg, $color-brown-light, $color-brown-dark)
         padding: 1rem 2rem .3rem 2rem
@@ -59,6 +84,9 @@
             right: 0
             padding-bottom: 1rem
             padding-top: 0
+            @include respond(tab-port)
+                top: 4.4rem
+
     &__descr //стили для списков
         ul
             list-style: none
@@ -73,6 +101,11 @@
                 display: inline-block
                 &:not(:last-child)
                     margin-bottom: 2rem
+                @include respond(tab-land)
+                    font-size: 1.5rem
+                @include respond(tab-port)
+                    font-size: 2rem
+
                     
     //стили для задней сторогы карточки
     &__backSide-box
@@ -80,6 +113,12 @@
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
+        @media only screen and (max-width: 900px), (hover: none)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%, 0%)
+            text-align: center
     &__text
         margin-bottom: 8rem
         letter-spacing: .2rem

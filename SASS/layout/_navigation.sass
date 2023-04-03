@@ -12,6 +12,7 @@
         z-index: 200
         text-align: center
         cursor: pointer
+        box-shadow: $box-shadow
     &__background //фон
         width: 6rem
         height: 6rem
@@ -67,12 +68,12 @@
     
     &__icon //создаем span с полосками
         position: relative
-        margin-top: 37px
+        margin-top: 3.7rem
         &, //по середине
         &::before, //до
         &::after //после
-            width: 30px
-            height: 2px
+            width: 3rem
+            height: .2rem
             background: $color-black
             display: inline-block
         &::before,
@@ -82,13 +83,13 @@
             left: 0
             transition: all .2s
         &::before
-            top: -8px
+            top: -.8rem
         &::after
-            top: 8px
+            top: .8rem
     &__button:hover &__icon::before //при наведении полоски немного разезжаются
-        top: -10px
+        top: -1rem
     &__button:hover &__icon::after
-        top: 10px
+        top: 1rem
     
     &__toggle:checked + &__button &__icon //при нажатии средняя полоса исчезает
         background: transparent
