@@ -13,6 +13,8 @@
         text-align: center
         cursor: pointer
         box-shadow: $box-shadow
+        @include respond(tab-port)
+            right: 7rem
     &__background //фон
         width: 6rem
         height: 6rem
@@ -23,6 +25,8 @@
         top: 11rem
         z-index: 100
         transition: all .7s
+        @include respond(tab-port)
+            right: 8rem
     &__nav //меню nav
         height: 100vh
         width: 100%
